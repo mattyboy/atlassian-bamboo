@@ -16,12 +16,8 @@ ENV BAMBOO_INSTALL /var/local/atlassian/bamboo
 ENV BAMBOO_URL "https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-$BAMBOO_VERSION.tar.gz"
 ENV AWS_CLI /usr/local/aws
 
-# allow replacing httpredir mirror, using AU mirror by default
-ARG APT_MIRROR="ftp.monash.edu.au\/pub\/linux"
-
 # install dependencies and set locale
-RUN export DEBIAN_FRONTEND=noninteractive \
-  && sed -i s/httpredir.debian.org/$APT_MIRROR/g /etc/apt/sources.list && apt-get update \
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
   && apt-get install -y --no-install-recommends locales ant ant-optional zip unzip xz-utils \
   && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen en_US.UTF-8 \
   && rm -rf /var/lib/apt/lists/*
