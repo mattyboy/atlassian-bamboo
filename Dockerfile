@@ -10,7 +10,7 @@ ENV MAVEN_URL "http://apache.osuosl.org/maven/maven-3/$MAVEN_VERSION/binaries/ap
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "/root/.m2"
 
-ENV BAMBOO_VERSION 6.1.1
+ENV BAMBOO_VERSION 6.2.2
 ENV BAMBOO_HOME /opt/bamboo-home
 ENV BAMBOO_INSTALL /var/local/atlassian/bamboo
 ENV BAMBOO_URL "https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-$BAMBOO_VERSION.tar.gz"
